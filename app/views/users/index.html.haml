@@ -1,0 +1,18 @@
+.container
+  %h1 Devices management
+  %h2 Create account
+  = form_with(scope: :user, url: 'users') do | form |
+    %p#alert= alert
+    .form_group
+      = form.label(:name)
+      = form.text_field(:name, class: 'form-control')
+    .form_group
+      = form.label(:email)
+      = form.email_field(:email, class: 'form-control')
+    .form_group
+      = form.label(:password)
+      = form.password_field(:password, class: 'form-control')
+    .actions
+      = form.submit('Create', class: 'btn btn-primary')
+      %small{ class: 'form-text' }
+        = link_to('Login to an existing account', controller: 'sessions', action: 'index')
