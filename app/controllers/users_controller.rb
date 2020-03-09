@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
   def sign_up id
     session[:user_id] = id
-    redirect_to '/sessions'
+    redirect_to '/dashboard'
   end
 
   def show_errors errors
